@@ -9,11 +9,13 @@ TABLE_START = '<!--- START TABLE --->'
 TABLE_END = '<!--- END TABLE --->'
 COLUMNS = {
     'name': 'Name',
-    'industry': 'Industry',
+    'business': 'Business',
     'remote_policy': 'Remote Policy',
-    'engineering_glassdoor_rating': 'Engineering Glassdoor Rating',
-    'overall_glassdoor_rating': 'Overall Glassdoor Rating',
-    'tech_stack': 'Tech Stack',
+    'hiring_region': 'Hiring Region',
+    'engineering_glassdoor_rating': 'Eng. Glassdoor Rating',
+    'overall_glassdoor_rating': 'Glassdoor Rating',
+    'tech_stack': 'Tech',
+    'senior_salary_range': 'Sr. Pay',
 }
 
 
