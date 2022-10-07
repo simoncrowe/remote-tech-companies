@@ -11,7 +11,9 @@ COLUMNS = {
     'name': 'Name',
     'industry': 'Industry',
     'remote_policy': 'Remote Policy',
+    'engineering_glassdoor_rating': 'Engineering Glassdoor Rating',
     'overall_glassdoor_rating': 'Overall Glassdoor Rating',
+    'tech_stack': 'Tech Stack',
 }
 
 
