@@ -8,17 +8,20 @@ README_FILENAME = "README.md"
 TABLE_START = '<!--- START TABLE --->'
 TABLE_END = '<!--- END TABLE --->'
 COLUMNS = {
-   'name': 'Name',
-   'industry': 'Industry',
-   'remote_policy': 'Remote Policy',
+    'name': 'Name',
+    'industry': 'Industry',
+    'remote_policy': 'Remote Policy',
+    'overall_glassdoor_rating': 'Overall Glassdoor Rating',
 }
 
 
 def render_markup(data_source):
     if callable(data_source):
         value, link = data_source()
-        tooltip = data_source.__doc__ or ''
-        return f'[{value}]({link} "{tooltip}")'
+        if tooltip := data_source.__doc__:
+            return f'[{value}]({link} "{tooltip}")'
+        else:
+            return f'[{value}]({link})'
     return data_source
 
 

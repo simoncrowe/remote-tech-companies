@@ -6,8 +6,9 @@ from os import path
 _python_filepaths = glob.glob(path.join(path.dirname(__file__), "*.py"))
 MODULE_NAMES = [
     path.basename(filepath)[:-3]
-    for filepath in _python_filepaths if path.isfile(filepath)
-    and not filepath.endswith('__init__.py')
+    for filepath in _python_filepaths
+    if path.isfile(filepath) and not
+    filepath.endswith('__init__.py')
 ]
 __all__ = MODULE_NAMES
 

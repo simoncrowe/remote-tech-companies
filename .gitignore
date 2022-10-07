@@ -130,3 +130,5 @@ dmypy.json
 
 .pre-commit-config.yaml
 cspell.config.yaml
+
+.flake8
