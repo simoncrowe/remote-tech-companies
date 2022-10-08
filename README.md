@@ -1,11 +1,11 @@
-This repo contains modules in `company_data` for tech companies that
-hire remotely. These modules contain strings and callables that
-are used to populate the markdown table below.
+Below is information on tech companies that hire remotely, mainly intended for
+job seeking software engineers.
 
-To update the table, run:
-```sh
-python update_readme_table.py
-```
+There is a mixture of manually gathered data and things like average ratings
+and salaries that are automatically scraped and periodically updated.
+Hyperlinked data lead to their sources. Most hyperlinks also contain
+tooltips you can view by hovering over them.
+
 <!--- START TABLE --->
 
 # Company Data
@@ -15,3 +15,20 @@ python update_readme_table.py
 
 
 <!--- END TABLE --->
+
+# Contributing
+# Note regarding the code
+The Python code in this repo is not written to a professional standard.
+
+The naming of functions and modules is unorthodox and there are no tests,
+type hints or logging. This is intentional.
+Python is used here as a scripting language, so brevity, simplicity and
+expressiveness take centre stage.
+
+# How to add a company
+To add a company to the table, create a module in the `company_data` directory.
+
+To update the above table, run:
+```sh
+python update_readme_table.py
+```
