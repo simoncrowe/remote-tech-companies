@@ -132,3 +132,5 @@ dmypy.json
 cspell.config.yaml
 
 .flake8
+
+.cache/

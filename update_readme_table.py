@@ -1,10 +1,16 @@
+import os
+import time
+from datetime import timedelta
 from importlib import import_module
+from os import path
 
 from pytablewriter import MarkdownTableWriter
 
 import company_data
 
-README_FILENAME = "README.md"
+CACHE_DIRPATH = './.cache'
+CACHE_LIFETIME = timedelta(days=90).total_seconds()
+README_FILENAME = 'README.md'
 TABLE_START = '<!--- START TABLE --->'
 TABLE_END = '<!--- END TABLE --->'
 COLUMNS = {
@@ -19,7 +25,7 @@ COLUMNS = {
 }
 
 
-def render_markup(data_source):
+def render_markdown(data_source):
     if callable(data_source):
         value, link = data_source()
         if tooltip := data_source.__doc__:
@@ -29,12 +35,29 @@ def render_markup(data_source):
     return data_source
 
 
+def get_data(module, name):
+    data_key = f'{module.__name__}.{name}'
+    cache_path = path.join(CACHE_DIRPATH, data_key)
+    if (
+        path.exists(cache_path) and
+        time.time() - path.getmtime(cache_path) < CACHE_LIFETIME
+    ):
+        print(f'{data_key} found in cache. Using cached value...')
+        with open(cache_path, "r") as fileobj:
+            return fileobj.read()
+
+    if data_source := getattr(module, name, None):
+        markdown = render_markdown(data_source)
+        with open(cache_path, "w") as fileobj:
+            fileobj.write(markdown)
+        return markdown
+    else:
+        return ''
+
+
 def iter_values(module):
     for name in COLUMNS.keys():
-        if data_source := getattr(module, name, None):
-            yield render_markup(data_source)
-        else:
-            yield ''
+        yield get_data(module, name)
 
 
 def iter_data():
@@ -62,4 +85,7 @@ def update_readme(data):
 
 
 if __name__ == "__main__":
+    if not path.exists(CACHE_DIRPATH):
+        os.mkdir(CACHE_DIRPATH)
+
     update_readme(iter_data())
