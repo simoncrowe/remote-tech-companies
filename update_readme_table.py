@@ -25,6 +25,19 @@ COLUMNS = {
 }
 
 
+def sort_key(data):
+    keys = list(COLUMNS.keys())
+    eng_rating_index = keys.index('engineering_glassdoor_rating')
+    rating_index = keys.index('overall_glassdoor_rating')
+    eng_rating = float(_get_markdown_link_text(data[eng_rating_index]))
+    overall_rating = float(_get_markdown_link_text(data[rating_index]))
+    return (overall_rating + eng_rating) / 2
+
+
+def _get_markdown_link_text(link):
+    return link[1:link.find(']')]
+
+
 def render_markdown(data_source):
     if callable(data_source):
         value, link = data_source()
@@ -73,7 +86,8 @@ def update_readme(data):
     end = readme.find(TABLE_END) - 1
     assert end > start > -1, 'Table start/end comments are broken!'
 
-    val_matrix = [tuple(row_vals) for row_vals in data]
+    val_matrix = sorted((tuple(row_vals) for row_vals in data),
+                        key=sort_key, reverse=True)
     writer = MarkdownTableWriter(table_name='Company Data',
                                  headers=COLUMNS.values(),
                                  value_matrix=val_matrix)
