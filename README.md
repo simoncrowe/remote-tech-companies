@@ -17,18 +17,18 @@ tooltips you can view by hovering over them.
 <!--- END TABLE --->
 
 # Contributing
-# Note regarding the code
-The Python code in this repo is not written to a professional standard.
-
-The naming of functions and modules is unorthodox and there are no tests,
-type hints or logging. This is intentional.
-Python is used here as a scripting language, so brevity, simplicity and
-expressiveness take centre stage.
-
-# How to add a company
+## How to add a company
 To add a company to the table, create a module in the `company_data` directory.
 
 To update the above table, run:
 ```sh
 python update_readme_table.py
 ```
+
+## Note regarding the code
+The Python code in this repo is not written to a professional standard.
+The naming of functions and modules is unorthodox and there are no tests,
+type hints or logging.
+
+This is intentional. Python is used here as a scripting language,
+so brevity, simplicity and expressiveness take centre stage.
