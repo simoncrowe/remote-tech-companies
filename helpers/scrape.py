@@ -12,8 +12,9 @@ def glassdoor_rating(company_profile_url, user_agent):
     response = requests.get(company_profile_url, headers=headers)
     body = response.content.decode()
     result = re.search(r'ratingValue.*([0-4]\.[0-9]+)"', body)
-    print(f'Found rating: {result.group(1)}')
-    return result.group(1)
+    ave_rating = result.group(1)
+    print(f'Found rating: {ave_rating}')
+    return ave_rating
 
 
 @add.random_user_agent
@@ -23,5 +24,18 @@ def glassdoor_salary_range(salary_info_url, user_agent):
     response = requests.get(salary_info_url, headers=headers)
     body = response.content.decode()
     result = re.search(r'[£\$][0-9,]+\s-\s[\$£][0-9\,]+', body)
-    print(f'Found salary range: {result.group(0)}')
-    return result.group(0)
+    salary_range = result.group(0)
+    print(f'Found salary range: {salary_range}')
+    return salary_range
+
+
+@add.random_user_agent
+def levels_salary(salary_info_url, user_agent):
+    headers = {'User-Agent': user_agent}
+    print(f'Scraping salary from {salary_info_url}')
+    response = requests.get(salary_info_url, headers=headers)
+    body = response.content.decode()
+    result = re.search(r'Total per year.*(\$[0-9]+K)', body)
+    salary = result.group(1)
+    print(f'Found salary: {salary}')
+    return salary
