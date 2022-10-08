@@ -21,7 +21,7 @@ COLUMNS = {
     'engineering_glassdoor_rating': 'Eng. Glassdoor Rating',
     'overall_glassdoor_rating': 'Glassdoor Rating',
     'tech_stack': 'Tech',
-    'salary': 'Pay',
+    'salary': 'Eng. Pay',
 }
 
 
