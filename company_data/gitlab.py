@@ -20,7 +20,7 @@ def hiring_region():
 def engineering_glassdoor_rating():
     '''Average glassdoor rating for engineers'''
     url = 'https://www.glassdoor.co.uk/Reviews/GitLab-Engineering-Reviews-EI_IE1296544.0,6_DEPT1007.htm'
-    return scrape.glassdoor_rating(url), url
+    return scrape.glassdoor_engineering_rating(url), url
 
 
 def overall_glassdoor_rating():
