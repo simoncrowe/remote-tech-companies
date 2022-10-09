@@ -55,10 +55,10 @@ def get_data(module, name):
         path.exists(cache_path) and
         time.time() - path.getmtime(cache_path) < CACHE_LIFETIME
     ):
-        print(f'{data_key} found in cache. Using cached value...')
         with open(cache_path, 'r') as fileobj:
             return fileobj.read()
 
+    print(f'{data_key} not found in cache. Retrieving...')
     if data_source := getattr(module, name, None):
         markdown = render_markdown(data_source)
         with open(cache_path, 'w') as fileobj:
