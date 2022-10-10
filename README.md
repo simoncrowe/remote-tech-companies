@@ -25,6 +25,25 @@ tooltips you can view by hovering over them.
 ## How to add a company
 To add a company to the table, create a module in the `company_data` directory.
 
+The modules contain an attribute for all rows in the table. These attributes can be
+bound to either:
+- strings, which are simply copied to the table
+- or functions which are used to create hyperlinks.
+  These functions return a tuple of `(link_text, href)`
+  and their docstrings are used as tooltips.
+
+Once you've added or modified a module in `company_data`, run this script:
+```sh
+python update_readme_table.py
+```
+
+*Note:* The values in the table are cached in the `.cache/` directory of
+your local repo to avoid making too many HTTP requests every time the table is updated.
+To clear the cache and get fresh values run a command like the following:
+```sh
+rm .cache/company_data.gitlab.*
+```
+
 Here is an example some example module contents that you can copy
 and modify:
 
@@ -73,15 +92,4 @@ def salary():
     return scrape.glassdoor_salary_range(url), url
 ```
 
-To update the above table, run:
-```sh
-python update_readme_table.py
-```
 
-## Note regarding the code
-The Python code in this repo is not written to a professional standard.
-The naming of functions and modules is unorthodox and there are no tests,
-type hints or logging.
-
-This is intentional. Python is used here as a scripting language,
-so brevity, simplicity and expressiveness take centre stage.
