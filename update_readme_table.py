@@ -18,8 +18,8 @@ COLUMNS = {
     'business': 'Business',
     'remote_policy': 'Remote Policy',
     'hiring_region': 'Hiring Region',
-    'engineering_glassdoor_rating': 'Eng. Glassdoor Rating',
-    'overall_glassdoor_rating': 'Glassdoor Rating',
+    'engineering_glassdoor_rating': 'Eng. Rating',
+    'overall_glassdoor_rating': 'Rating',
     'tech_stack': 'Tech',
     'salary': 'Eng. Pay',
 }
