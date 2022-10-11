@@ -39,4 +39,4 @@ def tech_stack():
 def salary():
     '''Not enough data at present'''
     url = 'https://www.levels.fyi/companies/datafold/salaries/software-engineer'
-    return 'unknown', url
+    return scrape.levels_salary(url), url

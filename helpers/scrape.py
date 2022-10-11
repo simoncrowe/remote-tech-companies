@@ -56,6 +56,13 @@ def levels_salary(salary_info_url, user_agent):
     response = requests.get(salary_info_url, headers=headers)
     body = response.content.decode()
     result = re.search(r'The median Software Engineer compensation package at \w+ totals (\$[0-9]+K) per year', body)
-    salary = result.group(1)
-    print(f'Found salary: {salary}')
-    return salary
+    try:
+        salary = result.group(1)
+        print(f'Found salary: {salary}')
+        return salary
+    except AttributeError:
+        if 'salaries are hidden until we collect enough submissions' in body:
+            print('Not enough data to get salary right now')
+            return 'unknown'
+        else:
+            raise
