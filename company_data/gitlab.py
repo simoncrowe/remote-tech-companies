@@ -39,4 +39,4 @@ def tech_stack():
 def salary():
     '''Senior Software Engineer in USA'''
     url = 'https://www.glassdoor.co.uk/Salary/GitLab-Senior-Software-Engineer-US-Salaries-EJI_IE1296544.0,6_KO7,31_IL.32,34_IN1.htm'
-    return scrape.glassdoor_salary_range(url), url
+    return scrape.glassdoor_salary(url), url

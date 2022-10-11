@@ -39,4 +39,4 @@ def tech_stack():
 def salary():
     '''Senior Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Aiven-Senior-Software-Engineer-Salaries-E2610934_D_KO6,30.htm'
-    return scrape.glassdoor_salary_range(url), url
+    return scrape.glassdoor_salary(url), url

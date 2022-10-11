@@ -30,15 +30,23 @@ def glassdoor_engineering_rating(company_profile_url, user_agent):
 
 
 @add.random_user_agent
-def glassdoor_salary_range(salary_info_url, user_agent):
+def glassdoor_salary(salary_info_url, user_agent):
     headers = {'User-Agent': user_agent}
     print(f'Scraping salary from {salary_info_url}')
     response = requests.get(salary_info_url, headers=headers)
     body = response.content.decode()
     result = re.search(r'[£\$][0-9,]+\s-\s[\$£][0-9\,]+', body)
-    salary_range = result.group(0)
-    print(f'Found salary range: {salary_range}')
-    return salary_range
+    if result:
+        salary = result.group(0)
+    else:
+        # Try for single salary record
+        result = re.search(
+            r'total pay for a .* at .* is ([£$][0-9,]+) per year. This number',
+            body
+        )
+        salary = result.group(1)
+    print(f'Found salary: {salary}')
+    return salary
 
 
 @add.random_user_agent
