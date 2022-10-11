@@ -17,6 +17,7 @@ Here are the rough criteria used:
     * The majority of the workforce are fully remote
     * They offered remote work before the COVID-19 pandemic
     * They hire internationally regardless of where their offices are
+    * They identify as remote-first in their employer branding
 * remote-friendly
     * Remote workers may be a minority at these companies
     * They first started offering remote work during the COVID-19 pandemic
