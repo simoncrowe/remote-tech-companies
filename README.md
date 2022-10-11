@@ -1,10 +1,26 @@
-Below is information on tech companies that hire remotely, mainly intended for
-job seeking software engineers.
+Below is information on tech companies that hire _fully_ remote roles.
+This table shouldn't include companies that only offer some days a week
+remote.
 
 There is a mixture of manually gathered data and things like average ratings
 and salaries that are automatically scraped and periodically updated.
 Hyperlinked data lead to their sources. Most hyperlinks also contain
 tooltips you can view by hovering over them.
+
+There are two categories for _Remote Policy_: remote-first and remote-friendly.
+These categories are a bit fuzzy but should hopefully give some indication
+of how seriously a company takes remote work.
+
+Here are the rough criteria used:
+
+* remote-first
+    * The majority of the workforce are fully remote
+    * They offered remote work before the COVID-19 pandemic
+    * They hire internationally regardless of where their offices are
+* remote-friendly
+    * Remote workers may be a minority at these companies
+    * They first started offering remote work during the COVID-19 pandemic
+    * They only hire within the region in which their offices are based
 
 <!--- START TABLE --->
 
