@@ -32,7 +32,7 @@ def overall_glassdoor_rating():
 def tech_stack():
     '''Tech taken from Senior Full Stack Software Engineer job spec'''
     url = 'https://boards.greenhouse.io/anaconda/jobs/4260312'
-    tech = 'python, javascript, mongodb, docker, k8s, fastapi'
+    tech = 'python, js, mongodb, docker, k8s, fastapi'
     return tech, url
 
 

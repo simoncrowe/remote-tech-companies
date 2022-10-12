@@ -32,7 +32,7 @@ def overall_glassdoor_rating():
 def tech_stack():
     '''A selection of tech from stackshare.io'''
     url = 'https://stackshare.io/zapier/zapier'
-    tech = 'python, javascript, django, postgres, redis, aws lambda'
+    tech = 'python, js, django, postgres, redis, aws lambda'
     return tech, url
 
 

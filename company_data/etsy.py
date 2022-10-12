@@ -32,7 +32,7 @@ def overall_glassdoor_rating():
 def tech_stack():
     '''A selection of tech from stackshare.io'''
     url = 'https://stackshare.io/etsy/etsy'
-    tech = 'javascript, python, react, aws, jenkins'
+    tech = 'js, python, react, aws, jenkins'
     return tech, url
 
 
