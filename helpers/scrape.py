@@ -56,6 +56,8 @@ def levels_salary(salary_info_url, user_agent):
     response = requests.get(salary_info_url, headers=headers)
     body = response.content.decode()
     result = re.search(r'The median Software Engineer compensation package at \w+ totals (\$[0-9]+K) per year', body)
+    if not result:
+        result = re.search(r'The median total compensation package for a[\w\s]+ at [\w\s]+ is\s+([$£][0-9]+,[0-9]+).', body)
     try:
         salary = result.group(1)
         print(f'Found salary: {salary}')

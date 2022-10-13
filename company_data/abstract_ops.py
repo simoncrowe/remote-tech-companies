@@ -30,7 +30,7 @@ def overall_glassdoor_rating():
 
 
 def tech_stack():
-    '''Languages listed on Software Engineer job spec'''
+    '''Tech listed on Software Engineer job spec'''
     url = 'https://work.abstractops.com/experienced-backend-software-engineer'
     tech = 'js, react, graphql, postgres, gcp, k8s'
     return tech, url
