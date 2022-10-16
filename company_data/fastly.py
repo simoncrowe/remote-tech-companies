@@ -14,7 +14,7 @@ def remote_policy():
 def hiring_region():
     '''Listings for seemingly regional remote jobs'''
     url = 'https://www.fastly.com/about/careers/current-openings'
-    return 'regional?', url
+    return 'USA, UK, Canada', url
 
 
 def engineering_glassdoor_rating():
