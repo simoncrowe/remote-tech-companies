@@ -1,4 +1,5 @@
 import os
+import statistics
 import time
 from datetime import timedelta
 from importlib import import_module
@@ -29,9 +30,20 @@ def sort_key(data):
     keys = list(COLUMNS.keys())
     eng_rating_index = keys.index('engineering_glassdoor_rating')
     rating_index = keys.index('overall_glassdoor_rating')
-    eng_rating = float(_get_markdown_link_text(data[eng_rating_index]))
-    overall_rating = float(_get_markdown_link_text(data[rating_index]))
-    return (overall_rating + eng_rating) / 2
+    ratings = []
+    try:
+        eng_rating = float(_get_markdown_link_text(data[eng_rating_index]))
+        ratings.append(eng_rating)
+    except ValueError:
+        pass
+    try:
+        overall_rating = float(_get_markdown_link_text(data[rating_index]))
+        ratings.append(overall_rating)
+    except ValueError:
+        pass
+    if ratings:
+        return statistics.mean(ratings)
+    return 0
 
 
 def _get_markdown_link_text(link):
