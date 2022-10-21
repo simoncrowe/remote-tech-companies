@@ -47,8 +47,10 @@ def glassdoor_salary(salary_info_url, user_agent):
             body
         )
         salary = result.group(1)
+
     print(f'Found salary: {salary}')
-    return salary
+    salary_range = [amount.strip() for amount in salary.split("-")]
+    return " - ".join(salary_range)
 
 
 @add.random_user_agent
