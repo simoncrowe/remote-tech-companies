@@ -35,7 +35,7 @@ def glassdoor_salary(salary_info_url, user_agent):
     print(f'Scraping salary from {salary_info_url}')
     response = requests.get(salary_info_url, headers=headers)
     body = response.content.decode()
-    result = re.search(r'[£\$][0-9,]+\s-\s[\$£][0-9\,]+', body)
+    result = re.search(r'[£\$][0-9,]+\s*-\s*[\$£][0-9\,]+', body)
     if result:
         salary = result.group(0)
     else:
