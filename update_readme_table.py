@@ -38,7 +38,7 @@ def sort_key(data):
     except ValueError:
         overall_rating = 0
 
-    return eng_rating, overall_rating
+    return eng_rating or overall_rating, overall_rating
 
 
 def _get_markdown_link_text(link):
