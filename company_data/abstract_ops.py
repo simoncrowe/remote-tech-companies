@@ -17,16 +17,16 @@ def hiring_region():
     return 'global (US timezones)', url
 
 
-def engineering_glassdoor_rating():
-    '''Average glassdoor rating for engineers'''
-    url = 'https://www.glassdoor.co.uk/Reviews/AbstractOps-Engineering-Reviews-EI_IE6885566.0,11_DEPT1007.htm?filter.iso3Language=eng'
-    return scrape.glassdoor_engineering_rating(url), url
-
-
 def overall_glassdoor_rating():
     '''Overall average glassdoor rating'''
     url = 'https://www.glassdoor.co.uk/Overview/Working-at-AbstractOps-EI_IE6885566.11,22.htm'
     return scrape.glassdoor_rating(url), url
+
+
+def engineering_glassdoor_rating():
+    '''Average glassdoor rating for engineers'''
+    url = 'https://www.glassdoor.co.uk/Reviews/AbstractOps-Engineering-Reviews-EI_IE6885566.0,11_DEPT1007.htm?filter.iso3Language=eng'
+    return scrape.glassdoor_engineering_rating(url), url
 
 
 def tech_stack():
