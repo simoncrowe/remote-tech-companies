@@ -29,9 +29,7 @@ def engineering_glassdoor_rating():
     return scrape.glassdoor_engineering_rating(url), url
 
 
-def tech_stack():
-    '''Could not find any info online'''
-    return 'unknown', ''
+tech_stack = "unknown"
 
 
 def salary():
