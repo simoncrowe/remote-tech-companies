@@ -14,7 +14,7 @@ def remote_policy():
 def hiring_region():
     '''Listings for regional remote jobs'''
     url = 'https://www.synthesia.io/careers#jobs'
-    return 'global (US timezones)', url
+    return 'Europe, USA', url
 
 
 def overall_glassdoor_rating():
