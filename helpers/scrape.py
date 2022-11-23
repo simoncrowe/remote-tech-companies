@@ -24,9 +24,13 @@ def glassdoor_engineering_rating(company_profile_url, user_agent):
     response = requests.get(company_profile_url, headers=headers)
     body = response.content.decode()
     if '<p>There are no reviews matching your search' in body:
-        return "unknown"
+        return 'unknown'
+
     result = re.search(r'title="([0-5]\.[0-9])"', body)
-    ave_rating = result.group(1)
+    try:
+        ave_rating = result.group(1)
+    except AttributeError:
+        return 'unknown'
     print(f'Found rating: {ave_rating}')
     return ave_rating
 
@@ -37,13 +41,13 @@ def glassdoor_salary(salary_info_url, user_agent):
     print(f'Scraping salary from {salary_info_url}')
     response = requests.get(salary_info_url, headers=headers)
     body = response.content.decode()
-    result = re.search(r'[£\$][0-9,]+\s*-\s*[\$£][0-9\,]+', body)
+    result = re.search(r'[£\$€][0-9,]+\s*-\s*[£\$€][0-9\,]+', body)
     if result:
         salary = result.group(0)
     else:
         # Try for single salary record
         result = re.search(
-            r'total pay for a .* at .* is ([£$][0-9,]+) per year. This number',
+            r'total pay for a .* at .* is ([£\$€][0-9,]+) per year. This number',
             body
         )
         salary = result.group(1)
