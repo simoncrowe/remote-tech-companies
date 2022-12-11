@@ -13,7 +13,7 @@ def remote_policy():
 
 def hiring_region():
     '''Listings for regional remote jobs'''
-    url = 'https://work.abstractops.com/'
+    url = 'https://jobs.dropbox.com/all-jobs'
     return 'USA, Canada, Poland, Ireland', url
 
 

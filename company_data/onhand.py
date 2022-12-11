@@ -6,9 +6,9 @@ business = 'Volunteering'
 
 
 def remote_policy():
-    '''A blog post describing their remote culture'''
-    url = 'https://www.abstractops.com/how-to-work-with-teams-in-opposite-time-zones'
-    return RemotePolicy.REMOTE_FIRST, url
+    '''Their jobs page which only some remote jobs in the UK'''
+    url = 'https://www.beonhand.co.uk/careers'
+    return RemotePolicy.REMOTE_FRIENDLY, url
 
 
 def hiring_region():

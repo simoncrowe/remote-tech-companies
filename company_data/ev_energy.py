@@ -7,7 +7,7 @@ business = 'EV Smart Charging'
 
 def remote_policy():
     '''A blog post describing their remote culture'''
-    url = 'https://www.abstractops.com/how-to-work-with-teams-in-opposite-time-zones'
+    url = 'https://www.ev.energy/blog/how-we-connect-our-remote-team-to-drive-change-at-a-global-scale'
     return RemotePolicy.REMOTE_FIRST, url
 
 

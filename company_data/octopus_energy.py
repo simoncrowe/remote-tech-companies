@@ -13,7 +13,7 @@ def remote_policy():
 
 def hiring_region():
     '''Listings for in office jobs and regional remote jobs'''
-    url = 'https://work.abstractops.com/'
+    url = 'https://octopus.energy/careers/join-us/'
     return 'Europe, APAC', url
 
 
@@ -31,7 +31,7 @@ def overall_glassdoor_rating():
 
 def tech_stack():
     '''Tech listed on a blog post by Director of Engineering'''
-    url = 'https://work.abstractops.com/experienced-backend-software-engineer'
+    url = 'https://daniel.feldroy.com/posts/whats-the-best-thing-about-working-for-octopus-energy-part-1'
     tech = 'python, js, django, react, aws, terraform'
     return tech, url
 
