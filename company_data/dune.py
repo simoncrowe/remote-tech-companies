@@ -31,7 +31,7 @@ def engineering_glassdoor_rating():
 
 def tech_stack():
     '''Tech listed on Software Engineer job spec'''
-    url = 'Selected tech from himalayas.app'''
+    url = 'https://himalayas.app/companies/dune-analytics/tech-stack'
     tech = 'js, typescript, go, nginx, k8s, terraform, aws'
     return tech, url
 

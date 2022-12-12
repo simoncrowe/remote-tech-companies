@@ -23,7 +23,7 @@ def glassdoor_engineering_rating(company_profile_url, user_agent):
     print(f'Scraping rating from {company_profile_url}')
     response = requests.get(company_profile_url, headers=headers)
     body = response.content.decode()
-    if '<p>There are no reviews matching your search' in body:
+    if re.search(r'<p.*>There are no reviews matching your search', body):
         return 'unknown'
 
     result = re.search(r'title="([0-5]\.[0-9])"', body)
