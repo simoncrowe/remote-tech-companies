@@ -11,10 +11,11 @@ def glassdoor_rating(company_profile_url, user_agent):
     print(f'Scraping rating from {company_profile_url}')
     response = requests.get(company_profile_url, headers=headers)
     body = response.content.decode()
-    result = re.search(r'ratingValue.*([0-5]\.[0-9]+)"', body)
-    ave_rating = result.group(1)
-    print(f'Found rating: {ave_rating}')
-    return ave_rating
+    if result := re.search(r'ratingValue.*([0-5]\.[0-9]+)"', body):
+        ave_rating = result.group(1)
+        print(f'Found rating: {ave_rating}')
+        return ave_rating
+    return 'unknown'
 
 
 @add.random_user_agent
