@@ -41,6 +41,12 @@ def sort_key(data):
         overall_rating = 0
 
     return (
+        any(region in data_map['hiring_region'].lower()
+            for region in ['uk', 'england', 'europe', 'emea', 'global']),
+        data_map['remote_policy'] == 'remote-first',
+        'python' in data_map['tech_stack'],
+        any(tech in data_map['tech_stack'] for tech in ['fastapi', 'go', 'rust']),
+        'django' not in data_map['tech_stack'],
         eng_rating or overall_rating,
         overall_rating,
     )
