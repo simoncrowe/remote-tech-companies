@@ -26,19 +26,24 @@ COLUMNS = {
 
 
 def sort_key(data):
-    keys = list(COLUMNS.keys())
-    eng_rating_index = keys.index('engineering_glassdoor_rating')
-    rating_index = keys.index('overall_glassdoor_rating')
+    data_map = {key: data[idx] for idx, key in enumerate(COLUMNS.keys())}
     try:
-        eng_rating = float(_get_markdown_link_text(data[eng_rating_index]))
+        eng_rating = float(
+            _get_markdown_link_text(data_map['engineering_glassdoor_rating'])
+        )
     except ValueError:
         eng_rating = 0
     try:
-        overall_rating = float(_get_markdown_link_text(data[rating_index]))
+        overall_rating = float(
+            _get_markdown_link_text(data_map['overall_glassdoor_rating'])
+        )
     except ValueError:
         overall_rating = 0
 
-    return eng_rating or overall_rating, overall_rating
+    return (
+        eng_rating or overall_rating,
+        overall_rating,
+    )
 
 
 def _get_markdown_link_text(link):
