@@ -30,9 +30,9 @@ def engineering_glassdoor_rating():
 
 
 def tech_stack():
-    '''Selected tech from himalayas.app'''
-    url = 'https://himalayas.app/companies/finn/tech-stack'
-    tech = 'python, fo, js, typescript, google bigquery, aws'
+    '''Tech from Tech Lead job spec'''
+    url = 'https://jobs.lever.co/finn.auto/7549b914-e410-445a-be83-b3e14d8d85ab'
+    tech = 'js, typescript, python, go, aws'
     return tech, url
 
 
