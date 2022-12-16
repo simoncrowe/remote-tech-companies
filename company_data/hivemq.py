@@ -2,7 +2,7 @@ from company_data import RemotePolicy
 from helpers import scrape
 
 name = 'HiveMQ'
-business = 'Legal Docs'
+business = 'Message Broker'
 
 
 def remote_policy():
