@@ -26,16 +26,15 @@ COLUMNS = {
 
 
 def sort_key(data):
-    data_map = {key: data[idx] for idx, key in enumerate(COLUMNS.keys())}
     try:
         eng_rating = float(
-            _get_markdown_link_text(data_map['engineering_glassdoor_rating'])
+            _get_markdown_link_text(data['engineering_glassdoor_rating'])
         )
     except ValueError:
         eng_rating = 0
     try:
         overall_rating = float(
-            _get_markdown_link_text(data_map['overall_glassdoor_rating'])
+            _get_markdown_link_text(data['overall_glassdoor_rating'])
         )
     except ValueError:
         overall_rating = 0
@@ -45,14 +44,14 @@ def sort_key(data):
     desired_tech = ['fastapi', 'flask', 'go', 'rust']
     undesired_tech = ['django']
     return (
-        any(region in data_map['hiring_region'].lower()
+        any(region in data['hiring_region'].lower()
             for region in possible_regions),
-        any(tech in data_map['tech_stack'] for tech in core_tech),
-        not any(tech in data_map['tech_stack'] for tech in undesired_tech),
-        '[remote-first]' in data_map['remote_policy'],
+        any(tech in data['tech_stack'] for tech in core_tech),
+        not any(tech in data['tech_stack'] for tech in undesired_tech),
+        '[remote-first]' in data['remote_policy'],
         eng_rating or overall_rating,
         overall_rating,
-        any(tech in data_map['tech_stack'] for tech in desired_tech),
+        any(tech in data['tech_stack'] for tech in desired_tech),
     )
 
 
@@ -92,7 +91,7 @@ def get_data(module, name):
 
 def iter_values(module):
     for name in COLUMNS.keys():
-        yield get_data(module, name)
+        yield name, get_data(module, name)
 
 
 def iter_data():
@@ -108,8 +107,9 @@ def update_readme(data):
     end = readme.find(TABLE_END) - 1
     assert end > start > -1, 'Table start/end comments are broken!'
 
-    val_matrix = sorted((tuple(row_vals) for row_vals in data),
-                        key=sort_key, reverse=True)
+    vals = sorted((dict(row) for row in data),
+                  key=sort_key, reverse=True)
+    val_matrix = (tuple(row.values()) for row in vals)
     writer = MarkdownTableWriter(table_name='Company Data',
                                  headers=COLUMNS.values(),
                                  value_matrix=val_matrix)
