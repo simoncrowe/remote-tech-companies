@@ -48,6 +48,8 @@ def sort_key(data):
             for region in possible_regions),
         any(tech in data['tech_stack'] for tech in core_tech),
         not any(tech in data['tech_stack'] for tech in undesired_tech),
+        eng_rating >= 4.28 if eng_rating else True,  # Current employer
+        overall_rating >= 3.78 if overall_rating else True,  # Current employer
         '[remote-first]' in data['remote_policy'],
         eng_rating or overall_rating,
         overall_rating,
