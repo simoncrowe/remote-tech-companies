@@ -126,7 +126,7 @@ bound to either:
   These functions return a tuple of `(link_text, href)`
   and their docstrings are used as tooltips.
 
-You can copy the `company_data_template.py` file from the root of this repo if you need something to start from.
+You can copy the `template_company_data.py` file from the root of this repo if you need something to start from.
 
 Once you've added or modified a module in `company_data`, run this script:
 ```sh
