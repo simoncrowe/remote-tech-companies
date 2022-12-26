@@ -23,9 +23,6 @@ def overall_glassdoor_rating():
     return scrape.glassdoor_rating(url), url
 
 
-engineering_glassdoor_rating = "unknown"
-
-
 def tech_stack():
     '''Tech listed on Software Engineer job spec'''
     url = 'https://jobs.lever.co/ntropy-network/5a587b64-7f97-4d75-be47-acf6394ed936'

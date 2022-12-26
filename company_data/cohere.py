@@ -34,9 +34,3 @@ def tech_stack():
     url = 'https://jobs.lever.co/cohere/a400534c-8dd8-4535-9550-918ff180fd7a'
     tech = 'go'
     return tech, url
-
-
-def salary():
-    '''No information at present'''
-    url = 'https://www.glassdoor.co.uk/Salary/Cohere-Salaries-E6413613.htm'
-    return "unknown", url
