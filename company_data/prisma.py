@@ -34,6 +34,3 @@ def tech_stack():
     url = 'https://himalayas.app/companies/prisma/tech-stack'
     tech = 'js, typescript, rust, next.js, react, aws'
     return tech, url
-
-
-salary = "unknown"

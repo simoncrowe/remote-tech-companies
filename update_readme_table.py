@@ -88,7 +88,7 @@ def get_data(module, name):
             fileobj.write(markdown)
         return markdown
     else:
-        return ''
+        return 'unknown'
 
 
 def iter_values(module):

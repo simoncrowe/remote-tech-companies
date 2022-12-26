@@ -29,9 +29,6 @@ def engineering_glassdoor_rating():
     return scrape.glassdoor_engineering_rating(url), url
 
 
-tech_stack = "unknown"
-
-
 def salary():
     '''Software Engineer based in USA'''
     url = 'https://www.glassdoor.com/Salary/Zerion-Software-Software-Engineer-Salaries-E271496_DAO.htm?filter.jobTitleExact=Software+Engineer%28%29'

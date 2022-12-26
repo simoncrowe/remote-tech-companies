@@ -34,6 +34,3 @@ def tech_stack():
     url = 'https://www.beonhand.co.uk/senior-python-engineer'
     tech = 'python, flask, postgres, docker, k8s, heroku, aws'
     return tech, url
-
-
-salary = "unknown"

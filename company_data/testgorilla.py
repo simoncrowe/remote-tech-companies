@@ -34,6 +34,3 @@ def tech_stack():
     url = 'https://himalayas.app/companies/testgorilla/tech-stack'
     tech = 'js, angular, python, django, redis, k8s, ansible, terraform, aws'
     return tech, url
-
-
-salary = "unknown"
