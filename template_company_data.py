@@ -14,7 +14,7 @@ def remote_policy():
 def hiring_region():
     '''Listings for regional remote jobs'''
     url = ''
-    return 'APAC, EMEA, Americas', url
+    return '', url
 
 
 def overall_glassdoor_rating():
