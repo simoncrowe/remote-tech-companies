@@ -14,7 +14,7 @@ def remote_policy():
 def hiring_region():
     '''Listings for regional remote jobs'''
     url = ''
-    return 'APAC, EMEA, Americas', url
+    return '', url
 
 
 def overall_glassdoor_rating():
@@ -29,14 +29,14 @@ def engineering_glassdoor_rating():
     return scrape.glassdoor_engineering_rating(url), url
 
 
+def salary():
+    '''Senior Software Engineer based in USA'''
+    url = ''
+    return scrape.glassdoor_salary(url), url
+
+
 def tech_stack():
     '''Selected tech from stackshare.io'''
     url = ''
     tech = ''
     return tech, url
-
-
-def salary():
-    '''Senior Software Engineer based in USA'''
-    url = ''
-    return scrape.glassdoor_salary(url), url

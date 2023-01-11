@@ -38,5 +38,5 @@ def tech_stack():
 
 def salary():
     '''Salary range mentioned on a Senior Software Engineer job spec (Remote: EMEA)'''
-    url = 'https://www.levels.fyi/companies/grafana/salaries/software-engineer'
+    url = 'https://boards.eu.greenhouse.io/hotjar/jobs/4068204101'
     return '€80,000 - €105,000', url
