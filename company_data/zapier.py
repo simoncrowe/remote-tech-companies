@@ -13,7 +13,7 @@ def remote_policy():
 
 def hiring_region():
     '''Listings for global and regional remote jobs'''
-    url = 'https://aiven.io/careers/job'
+    url = 'https://zapier.com/jobs#job-openings'
     return 'global', url
 
 
@@ -37,6 +37,6 @@ def tech_stack():
 
 
 def salary():
-    '''Senior Software Engineer based in UK'''
-    url = 'https://www.glassdoor.com/Salary/Zapier-Software-Engineer-Salaries-E1196705_D_KO7,24.htm'
+    '''Senior Data Engineer based in UK'''
+    url = 'https://www.glassdoor.co.uk/Salary/Zapier-Senior-Data-Engineer-Salaries-E1196705_D_KO7,27.htm'
     return scrape.glassdoor_salary(url), url
