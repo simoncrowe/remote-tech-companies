@@ -76,7 +76,7 @@ def levels_salary(salary_info_url, user_agent):
         print(f'Found salary: {salary}')
         return salary
     except AttributeError:
-        if re.search(r'We only need.*[0-9]+.*submissions.*to unlock salary data',  body):
+        if re.search(r'We only need.*[0-9]+.*submission.*to unlock salary data',  body):
             print('Not enough data to get salary right now')
             return 'unknown'
         else:
