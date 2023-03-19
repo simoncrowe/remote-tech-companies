@@ -10,7 +10,7 @@ from pytablewriter import MarkdownTableWriter
 import company_data
 
 CACHE_DIRPATH = './.cache'
-CACHE_LIFETIME = timedelta(days=60).total_seconds()
+CACHE_LIFETIME = timedelta(days=90).total_seconds()
 README_FILENAME = 'README.md'
 TABLE_START = '<!--- START TABLE --->'
 TABLE_END = '<!--- END TABLE --->'
