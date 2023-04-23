@@ -6,7 +6,7 @@ business = 'Data Mining'
 
 
 def remote_policy():
-    '''Their careers page, which suggests that they offer "the freedom to work from any location"'''
+    '''Their careers page, which suggests that they offer 'the freedom to work from any location' '''
     url = 'https://www.audiense.com/jobs/careers'
     return RemotePolicy.REMOTE_FIRST, url
 

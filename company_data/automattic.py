@@ -6,7 +6,7 @@ business = ''
 
 
 def remote_policy():
-    '''Their careers page, which suggest one works "from anywhere"'''
+    '''Their careers page, which suggest one works 'from anywhere' '''
     url = 'https://automattic.com/work-with-us/'
     return RemotePolicy.REMOTE_FIRST, url
 

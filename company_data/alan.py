@@ -6,7 +6,7 @@ business = 'Health/Insurtech'
 
 
 def remote_policy():
-    '''A blog post, which says they have a "work from anywhere" culture'''
+    '''A blog post, which says they have a 'work from anywhere' culture'''
     url = 'https://medium.com/alan/working-at-alan-from-anywhere-9a6fe381dc0a'
     return RemotePolicy.REMOTE_FRIENDLY, url
 
