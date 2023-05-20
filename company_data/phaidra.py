@@ -33,4 +33,7 @@ def tech_stack():
     return tech, url
 
 
-salary = 'unknown'
+def salary():
+    '''UK salary range from Software Engineer job spec'''
+    url = 'https://boards.greenhouse.io/phaidra/jobs/4250393005'
+    return '£82,000-£105,000', url
