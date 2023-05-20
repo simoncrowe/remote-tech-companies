@@ -7,7 +7,7 @@ business = 'SaaS'
 
 def remote_policy():
     '''An Otta job spec, which says they're an all-remote company'''
-    url = ''
+    url = 'https://app.otta.com/dashboard/jobs/SHVVZlVV'
     return RemotePolicy.REMOTE_FIRST, url
 
 
