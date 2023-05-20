@@ -43,7 +43,7 @@ def sort_key(data):
     possible_regions = ['uk', 'england', 'europe', 'emea', 'global', 'gmt']
     core_tech = ['python']
     desired_tech = ['fastapi', 'flask', 'go', 'rust']
-    undesired_tech = ['django']
+    undesired_tech = []
     return (
         any(region in data['hiring_region'].lower()
             for region in possible_regions),
