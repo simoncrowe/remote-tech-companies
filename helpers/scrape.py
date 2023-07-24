@@ -1,4 +1,6 @@
+import random
 import re
+import time
 
 import requests
 
@@ -87,6 +89,10 @@ def levels_salary(salary_info_url, user_agent):
 @add.random_user_agent
 def crunchbase_funding(company_profile_url, user_agent):
     headers = {'User-Agent': user_agent}
+    sleep_duration = 1 + (random.random() * 2)
+    print(f"Waiting {sleep_duration:.2f} seconds")
+    time.sleep(sleep_duration)
+
     print(f'Scraping funding info from {company_profile_url}')
     response = requests.get(company_profile_url, headers=headers)
     body = response.content.decode()
