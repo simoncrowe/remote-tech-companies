@@ -46,6 +46,7 @@ def glassdoor_salary(salary_info_url, user_agent):
     print(f'Scraping salary from {salary_info_url}')
     response = requests.get(salary_info_url, headers=headers)
     body = response.content.decode()
+    print(body)
     result = re.search(r'[£\$€][0-9,]+\s*-\s*[£\$€][0-9\,]+', body)
     if result:
         salary = result.group(0)
@@ -81,3 +82,22 @@ def levels_salary(salary_info_url, user_agent):
             return 'unknown'
         else:
             raise
+
+
+@add.random_user_agent
+def crunchbase_funding(company_profile_url, user_agent):
+    headers = {'User-Agent': user_agent}
+    print(f'Scraping funding info from {company_profile_url}')
+    response = requests.get(company_profile_url, headers=headers)
+    body = response.content.decode()
+
+    amount_result = re.search(r'text\":\".+ has raised (\$[0-9A-Z.]+)\.\"', body)
+    amount = amount_result.group(1) if amount_result is not None else None
+
+    round_result = re.search(r'text\":\".* closed its last funding round on .* from a ([\w\ ]+) round.\"', body)
+    latest_round = round_result.group(1) if round_result else None
+
+    if amount and latest_round:
+        return f"{amount} ({latest_round})"
+
+    return amount or latest_round
