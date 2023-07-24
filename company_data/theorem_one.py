@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer Salaries'''
     url = 'https://www.levels.fyi/companies/theoremone/salaries/software-engineer'
     return scrape.levels_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/theorem-one'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

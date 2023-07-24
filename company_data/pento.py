@@ -40,3 +40,10 @@ def salary():
     '''No data (2022-10-22)'''
     url = 'https://www.google.com/search?q=pento+software+engineer+salary&oq=pento+software+engineer+salary'
     return 'unknown', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/pento'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

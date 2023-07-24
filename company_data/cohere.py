@@ -34,3 +34,10 @@ def tech_stack():
     url = 'https://jobs.lever.co/cohere/a400534c-8dd8-4535-9550-918ff180fd7a'
     tech = 'go'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/cohere'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

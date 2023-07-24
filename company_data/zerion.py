@@ -33,3 +33,10 @@ def salary():
     '''Software Engineer based in USA'''
     url = 'https://www.glassdoor.com/Salary/Zerion-Software-Software-Engineer-Salaries-E271496_DAO.htm?filter.jobTitleExact=Software+Engineer%28%29'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/zerion'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

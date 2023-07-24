@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Airbnb-Software-Engineer-Salaries-E391850_D_KO7,24.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/airbnb'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

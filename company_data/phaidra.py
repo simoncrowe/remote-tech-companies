@@ -37,3 +37,10 @@ def salary():
     '''UK salary range from Software Engineer job spec'''
     url = 'https://boards.greenhouse.io/phaidra/jobs/4250393005'
     return '£82,000-£105,000', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/phaidra'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -1,4 +1,5 @@
 from company_data import RemotePolicy
+from helpers import scrape
 
 name = 'Fraudio'
 business = 'Fintech'
@@ -14,3 +15,10 @@ def hiring_region():
     '''Listings for regional remote jobs'''
     url = 'https://www.linkedin.com/company/fraudio/jobs/'
     return 'Europe', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/fraudio'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

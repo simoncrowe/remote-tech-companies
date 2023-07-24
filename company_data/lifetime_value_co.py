@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in USA'''
     url = 'https://www.glassdoor.com/Salary/The-Lifetime-Value-Co-Senior-Software-Engineer-Salaries-E4075133_D_KO22,46.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/lifetime-value-co'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

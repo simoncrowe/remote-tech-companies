@@ -34,3 +34,10 @@ def tech_stack():
     url = 'https://www.beonhand.co.uk/senior-python-engineer'
     tech = 'python, flask, postgres, docker, k8s, heroku, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/onhand'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -34,3 +34,10 @@ def salary():
     '''Salary on Software Engineer job spec'''
     url = 'https://jobs.lever.co/ntropy-network/5a587b64-7f97-4d75-be47-acf6394ed936'
     return '$120k', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/ntropy'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

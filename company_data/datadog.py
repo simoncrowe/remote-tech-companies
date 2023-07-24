@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer salary from UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Datadog-Senior-Software-Engineer-Salaries-E762009_D_KO8,32.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/datadog'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

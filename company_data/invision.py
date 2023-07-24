@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/InVision-Senior-Software-Engineer-Salaries-E912781_D_KO9,33.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/invision'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Form3-Financial-Cloud-Senior-Software-Engineer-Salaries-E2008415_D_KO22,46.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/form3'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

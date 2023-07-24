@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://stackshare.io/acquia/acquia'
     tech = 'php, java, nginx, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/acquia'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

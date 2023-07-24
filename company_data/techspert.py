@@ -40,3 +40,10 @@ def salary():
     '''Software Developer job based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Techspert-io-Software-Developer-Salaries-E3050042_D_KO13,31.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/techspert'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

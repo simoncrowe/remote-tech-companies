@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in USA'''
     url = 'https://www.glassdoor.co.uk/Salary/Moov-Financial-Senior-Software-Engineer-Cedar-Falls-Salaries-EJI_IE4223522.0,14_KO15,39_IL.40,51_IC1149509.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/moov'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer based in USA'''
     url = 'https://www.glassdoor.com/Salary/OpenCraft-Software-Developer-Salaries-E1513555_D_KO10,28.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/opencraft'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://github.com/remoteintech/remote-jobs/blob/main/company-profiles/compucorp.md'
     tech = 'php, python, drupal, civicrm, react, ansible, packer, jenkins, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/compuco'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

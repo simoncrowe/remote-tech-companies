@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer based in USA'''
     url = 'https://www.glassdoor.com/Salary/Redox-Inc-Software-Engineer-Salaries-E1266986_D_KO10,27.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/redox'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

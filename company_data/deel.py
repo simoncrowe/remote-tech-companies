@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Deel-Senior-Software-Engineer-Salaries-E3728271_D_KO5,29.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/deel'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in USA'''
     url = 'https://www.glassdoor.com/Salary/TaxJar-Senior-Software-Engineer-Salaries-E1450050_D_KO7,31.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/taxjar'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer'''
     url = 'https://www.glassdoor.com/Salary/Parse-ly-Senior-Software-Engineer-Salaries-E1197400_D_KO9,33.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/parsely'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

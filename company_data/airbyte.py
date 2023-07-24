@@ -34,3 +34,10 @@ def tech_stack():
     url = 'https://docs.airbyte.com/understanding-airbyte/tech-stack/'
     tech = 'java, python, nodejs, typescript, react, postgres'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/airbyte'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

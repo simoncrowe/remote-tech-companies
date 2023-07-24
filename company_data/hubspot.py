@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://stackshare.io/hubspot/hubspot'
     tech = 'js, java, swift, mysql, kafka, nginx, k8s'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/hubspot'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

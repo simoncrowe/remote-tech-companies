@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer based in France'''
     url = 'https://www.glassdoor.com/Salary/Pennylane-France-Software-Engineer-Paris-Salaries-EJI_IE4171708.0,16_KO17,34_IL.35,40_IM1080.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/pennylane'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

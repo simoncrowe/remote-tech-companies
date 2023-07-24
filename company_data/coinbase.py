@@ -40,3 +40,10 @@ def salary():
     '''Median salary for Software Engineer level IC4'''
     url = 'https://www.levels.fyi/companies/coinbase/salaries/software-engineer/levels/ic4'
     return scrape.levels_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/coinbase'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

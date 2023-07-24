@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://himalayas.app/companies/beyond/tech-stack'
     tech = 'python, js, django, next.js, postgresql, nginx, AWS'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/beyond-pricing'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

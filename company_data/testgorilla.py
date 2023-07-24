@@ -34,3 +34,10 @@ def tech_stack():
     url = 'https://himalayas.app/companies/testgorilla/tech-stack'
     tech = 'js, angular, python, django, redis, k8s, ansible, terraform, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/testgorilla'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

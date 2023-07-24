@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer salary range based on job spec'''
     url = 'https://boards.eu.greenhouse.io/synthesia/jobs/4094596101?gh_jid=4094596101'
     return '€70-110k', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/synthesia'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

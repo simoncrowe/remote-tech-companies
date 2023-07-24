@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer III based in USA'''
     url = 'https://www.levels.fyi/companies/reddit/salaries/software-engineer/levels/ic3'
     return scrape.levels_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/reddit'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

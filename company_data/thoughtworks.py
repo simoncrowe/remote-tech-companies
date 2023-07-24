@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Thoughtworks-Senior-Software-Engineer-Salaries-E38334_D_KO13,37.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/thoughtworks'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

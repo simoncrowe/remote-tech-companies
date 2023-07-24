@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Atom-Learning-Senior-Software-Engineer-Salaries-E3996943_D_KO14,38.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/atom-learning'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

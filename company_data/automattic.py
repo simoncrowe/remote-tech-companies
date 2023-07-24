@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://himalayas.app/companies/automattic/tech-stack'
     tech = 'php, ruby, python, go, java, scala, swift, kotlin, js, docker, k8s, mysql, redis, kafka'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/automattic'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://goto.wd5.myworkdayjobs.com/en-US/GoToCareers/job/Bangalore-KA-IN/Software-Development-Engineer_R-2022-2810-1?jobFamilyGroup=9147d7f6d775102e29bacc9daeba85a0'
     tech = 'java'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/goto'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

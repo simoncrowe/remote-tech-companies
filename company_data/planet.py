@@ -40,3 +40,10 @@ def salary():
     '''L4 Software Engineer in USA'''
     url = 'https://www.levels.fyi/companies/planet/salaries/software-engineer'
     return scrape.levels_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/planet'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

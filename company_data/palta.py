@@ -40,3 +40,10 @@ def salary():
     '''No information at present'''
     url = 'https://www.glassdoor.co.uk/Salary/Palta-Salaries-E6042331.htm'
     return 'unknown', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/palta'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://www.giantdigital.co.uk/careers/'
     tech = 'python, django, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/giant-digital'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

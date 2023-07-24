@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://himalayas.app/companies/snowflake/tech-stack'
     tech = 'js, java, python, php, go, c++, tensorflow, pytorch, linux, postgres, mysql, cassandra, jenkins, k8s, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/snowflake'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

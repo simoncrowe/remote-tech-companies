@@ -39,3 +39,10 @@ def salary():
     '''Salary range from old Senior Software Engineer job Spec'''
     url = 'https://angel.co/company/sastrify/jobs/1581484-senior-fullstack-developer-m-f-d-remote'
     return '€75k – €85k', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/sastrify'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

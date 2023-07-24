@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://stackshare.io/casumo/casumo'
     tech = 'js, java, scala, python, swift, mysql, nginx'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/casumo'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url
