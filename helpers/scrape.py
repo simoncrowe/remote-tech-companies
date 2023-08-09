@@ -89,7 +89,7 @@ def levels_salary(salary_info_url, user_agent):
 @add.random_user_agent
 def crunchbase_funding(company_profile_url, user_agent):
     headers = {'User-Agent': user_agent}
-    sleep_duration = 1 + (random.random() * 2)
+    sleep_duration = 30 + (random.random() * 30)
     print(f"Waiting {sleep_duration:.2f} seconds")
     time.sleep(sleep_duration)
 
