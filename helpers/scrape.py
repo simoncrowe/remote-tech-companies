@@ -95,6 +95,9 @@ def crunchbase_funding(company_profile_url, user_agent):
 
     print(f'Scraping funding info from {company_profile_url}')
     response = requests.get(company_profile_url, headers=headers)
+    if response.status_code == 404:
+        return "bad URL"
+
     body = response.content.decode()
 
     amount_result = re.search(r'text\":\".+ has raised (\$[0-9A-Z.]+)\.\"', body)
