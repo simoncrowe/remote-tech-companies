@@ -41,6 +41,6 @@ salary = 'unknown'
 
 def funding():
     '''Funding information scraped from Crunchbase'''
-    url = 'https://www.crunchbase.com/organization/john-snow-labs'
+    url = 'https://www.crunchbase.com/organization/john-snow-labs-inc'
     funding_info = scrape.crunchbase_funding(url)
     return funding_info, url

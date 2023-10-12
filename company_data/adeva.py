@@ -38,6 +38,6 @@ def tech_stack():
 
 def funding():
     '''Funding information scraped from Crunchbase'''
-    url = 'https://www.crunchbase.com/organization/adeva'
+    url = 'https://www.crunchbase.com/organization/adeva-it'
     funding_info = scrape.crunchbase_funding(url)
     return funding_info, url

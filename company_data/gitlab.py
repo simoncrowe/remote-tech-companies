@@ -44,6 +44,6 @@ def salary():
 
 def funding():
     '''Funding information scraped from Crunchbase'''
-    url = 'https://www.crunchbase.com/organization/gitlab'
+    url = 'https://www.crunchbase.com/organization/gitlab-com'
     funding_info = scrape.crunchbase_funding(url)
     return funding_info, url

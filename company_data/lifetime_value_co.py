@@ -44,6 +44,6 @@ def salary():
 
 def funding():
     '''Funding information scraped from Crunchbase'''
-    url = 'https://www.crunchbase.com/organization/lifetime-value-co'
+    url = 'https://www.crunchbase.com/organization/the-lifetime-value'
     funding_info = scrape.crunchbase_funding(url)
     return funding_info, url
