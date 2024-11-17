@@ -38,7 +38,7 @@ def tech_stack():
 
 def salary():
     '''Senior Software Engineer based in USA'''
-    url = 'https://www.levels.fyi/companies/fastly/salaries/software-engineer'
+    url = 'https://www.levels.fyi/companies/fastly/salaries/software-engineer/levels/e4'
     return scrape.levels_salary(url), url
 
 

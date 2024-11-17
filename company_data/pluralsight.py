@@ -38,7 +38,7 @@ def tech_stack():
 
 def salary():
     '''Software Engineer based in USA'''
-    url = 'https://www.levels.fyi/companies/pluralsight/salaries/software-engineer'
+    url = 'https://www.levels.fyi/companies/pluralsight/salaries/software-engineer/levels/p4'
     return scrape.levels_salary(url), url
 
 

@@ -38,8 +38,8 @@ def tech_stack():
 
 def salary():
     '''Senior Software Engineer based in USA'''
-    url = 'https://www.levels.fyi/companies/hive/salaries/software-engineer'
-    return scrape.levels_salary(url), url
+    url = 'https://www.glassdoor.com/Salary/HiveMQ-Software-Engineer-Salaries-E2931156_D_KO7,24.htm'
+    return scrape.glassdoor_salary(url), url
 
 
 def funding():

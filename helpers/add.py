@@ -1,5 +1,8 @@
 import random
+import time
 from functools import wraps
+
+from selenium import webdriver
 
 USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
@@ -41,4 +44,21 @@ def random_user_agent(func):
     def wrapper(*args, **kwargs):
         user_agent = random.choice(USER_AGENTS)
         return func(*args, user_agent=user_agent, **kwargs)
+    return wrapper
+
+
+def chromedriver(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        driver = webdriver.Chrome()
+        try:
+            result = func(*args, driver=driver, **kwargs)
+        except Exception as e:
+            print(str(e))
+            print("Sleeping for an hour to allow debug...")
+            time.sleep(60*60)
+            raise
+
+        driver.quit()
+        return result
     return wrapper
