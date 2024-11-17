@@ -1,6 +1,4 @@
-import random
 import re
-import time
 
 from helpers import add
 
@@ -24,12 +22,14 @@ def glassdoor_rating(company_profile_url, driver):
 @add.chromedriver
 def glassdoor_engineering_rating(company_profile_url, driver):
     driver.get(company_profile_url)
+    body = driver.page_source
+
     print(f'Scraping engineering rating from {company_profile_url}')
     body = driver.page_source
     if re.search(r'<p.*>There are no reviews matching your search', body):
         return 'unknown'
 
-    result = re.search(r'title="([0-5]\.[0-9])"', body)
+    result = re.search(r'<p class="rating-headline-average_rating__\w+">([0-5]\.[0-9])</p>', body)
     try:
         ave_rating = result.group(1)
     except AttributeError:
@@ -95,9 +95,6 @@ def levels_salary(salary_info_url, driver):
 
 @add.chromedriver
 def crunchbase_funding(company_profile_url, driver):
-    sleep_duration = 30 + (random.random() * 30)
-    print(f"Waiting {sleep_duration: .2f} seconds")
-    time.sleep(sleep_duration)
 
     print(f'Scraping funding info from {company_profile_url}')
     driver.get(company_profile_url)

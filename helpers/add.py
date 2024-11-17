@@ -48,17 +48,29 @@ def random_user_agent(func):
 
 
 def chromedriver(func):
+    if not chromedriver._glassdoor_auth:
+        print("You have two minutes to authenticate on glassdoor")
+        chromedriver._driver.get("https://glassdoor.co.uk")
+        time.sleep(120)
+        chromedriver._glassdoor_auth = True
+
     @wraps(func)
     def wrapper(*args, **kwargs):
-        driver = webdriver.Chrome()
         try:
-            result = func(*args, driver=driver, **kwargs)
+            result = func(*args, driver=chromedriver._driver, **kwargs)
+            sleep_duration = 30 + (random.random() * 30)
+            print(f"Waiting {sleep_duration: .2f} seconds")
+            time.sleep(sleep_duration)
         except Exception as e:
             print(str(e))
             print("Sleeping for an hour to allow debug...")
             time.sleep(60*60)
+            chromedriver._driver.quit()
             raise
 
-        driver.quit()
         return result
     return wrapper
+
+
+chromedriver._driver = webdriver.Chrome()
+chromedriver._glassdoor_auth = False
