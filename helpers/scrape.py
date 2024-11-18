@@ -8,7 +8,7 @@ def glassdoor_rating(company_profile_url, driver):
     driver.get(company_profile_url)
     print(f'Scraping rating from {company_profile_url}')
     body = driver.page_source
-    if result := re.search(r'title="([0-5]\.[0-9]+)"', body):
+    if result := re.search(r'<p class="rating-headline-average_rating__\w+">([0-5]\.[0-9])</p>', body):
         ave_rating = result.group(1)
         print(f'Found rating: {ave_rating}')
         return ave_rating

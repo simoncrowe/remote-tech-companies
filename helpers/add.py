@@ -50,7 +50,7 @@ def random_user_agent(func):
 def chromedriver(func):
     if not chromedriver._glassdoor_auth:
         chromedriver._driver.get("https://glassdoor.co.uk")
-        while not input("Enter Y once you've authenticated to glassdoor").lower() == "y":
+        while not input("Enter Y once you've authenticated to glassdoor\n").lower() == "y":
             print("Input not recognized")
         chromedriver._glassdoor_auth = True
 

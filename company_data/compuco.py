@@ -25,7 +25,7 @@ def overall_glassdoor_rating():
 
 def engineering_glassdoor_rating():
     '''Average glassdoor rating for engineers'''
-    url = 'https://www.glassdoor.com/Reviews/Compuco-Engineering-Reviews-EI_IE1375270.0,7_DEPT1007.htm?filter.iso3Language=eng&filter.employmentStatus=REGULAR&filter.employmentStatus=PART_TIME'
+    url = 'https://www.glassdoor.co.uk/Reviews/Compuco-Engineering-Reviews-EI_IE1375270.0,7_DEPT1007.htm?filter.iso3Language=eng&filter.employmentStatus=REGULAR&filter.employmentStatus=PART_TIME'
     return scrape.glassdoor_engineering_rating(url), url
 
 
