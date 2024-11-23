@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in USA'''
     url = 'https://www.glassdoor.com/Salary/AbstractOps-Software-Engineer-Salaries-E6885566_D_KO12,29.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/digital-ocean'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

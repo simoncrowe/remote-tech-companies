@@ -38,5 +38,12 @@ def tech_stack():
 
 def salary():
     '''Senior Software Engineer based in USA'''
-    url = 'https://www.levels.fyi/companies/fastly/salaries/software-engineer'
+    url = 'https://www.levels.fyi/companies/fastly/salaries/software-engineer/levels/e4'
     return scrape.levels_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/fastly'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

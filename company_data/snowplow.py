@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Snowplow-Software-Engineer-Salaries-E1482594_D_KO9,26.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/snowplow-analytics'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

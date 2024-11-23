@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://github.com/orgs/questdb/repositories?q=&type=all&language=&sort=stargazers'
     tech = 'java, typescript, python, c++, go'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/quest-db'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

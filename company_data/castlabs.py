@@ -34,3 +34,10 @@ def tech_stack():
     url = 'https://boards.eu.greenhouse.io/castlabs/jobs/4101284101'
     tech = 'js, python, django, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/castlabs'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

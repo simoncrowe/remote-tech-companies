@@ -40,3 +40,10 @@ def salary():
     '''Salary range on old Senior Software Engineer job spec'''
     url = 'https://cord.co/u/ledgy/jobs/21087-senior-software-engineer-at-ledgy?%2Fjobs%2F10379-devops-lead-='
     return '£80,000 - £105,000', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/ledgy'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

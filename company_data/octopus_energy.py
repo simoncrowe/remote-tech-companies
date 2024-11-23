@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Octopus-Energy-Senior-Software-Engineer-Salaries-E1482748_D_KO15,39.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/octopus-energy'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -34,3 +34,10 @@ def tech_stack():
     url = 'https://pushsecurity.bamboohr.com/jobs/view.php?id=54&source=bamboohr'
     tech = 'python, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/push-security'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

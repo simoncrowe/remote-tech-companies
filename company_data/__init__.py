@@ -17,3 +17,6 @@ __all__ = MODULE_NAMES
 class RemotePolicy(str, enum.Enum):
     REMOTE_FIRST = "remote-first"
     REMOTE_FRIENDLY = "remote-friendly"
+
+    def __str__(self):
+        return self.value

@@ -34,3 +34,10 @@ def tech_stack():
     url = 'https://github.com/remoteintech/remote-jobs/blob/main/company-profiles/lifen.md'
     tech = 'python, ruby, js, rails, nodejs, react, java, k8s, terraform, docker'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/lifen'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

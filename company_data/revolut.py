@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Revolut-Senior-Software-Engineer-Salaries-E1176471_D_KO8,32.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/revolut'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

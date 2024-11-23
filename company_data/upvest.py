@@ -40,3 +40,10 @@ def salary():
     '''Salary range from 2022 job spec'''
     url = 'https://golang.cafe/job/golang-backend-engineer-f-m-d-upvest-1606150893'
     return '€70-85k', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/upvest'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

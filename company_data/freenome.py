@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in USA'''
     url = 'https://www.glassdoor.com/Salary/Freenome-Senior-Software-Engineer-Salaries-E1411775_D_KO9,33.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/freenome'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

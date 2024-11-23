@@ -34,3 +34,10 @@ def tech_stack():
     url = 'https://himalayas.app/companies/adeva/tech-stack'
     tech = 'kotlin, scala, swift, php, typescript, symfony, postgres, aws, gcp'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/adeva-it'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

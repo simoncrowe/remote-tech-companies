@@ -40,3 +40,10 @@ def salary():
     '''Old Senior Software Engineer job spec'''
     url = 'https://cord.co/u/hofy/jobs/14295-senior-software-engineer'
     return '£75,000 - £95,000', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/hofy'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

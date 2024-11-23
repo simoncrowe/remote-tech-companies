@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://careers.vmware.com/main/jobs/R2222782?lang=en-us'
     tech = 'java, go, python, kafka, jenkins, docker, k8s, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/vmware'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer based in Europe'''
     url = 'https://www.glassdoor.co.uk/Salary/YouGov-Senior-Python-Engineer-Salaries-E518089_D_KO7,29.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/yougov'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -25,7 +25,7 @@ def overall_glassdoor_rating():
 
 def engineering_glassdoor_rating():
     '''Average glassdoor rating for engineers'''
-    url = 'https://www.glassdoor.com/Reviews/Compuco-Engineering-Reviews-EI_IE1375270.0,7_DEPT1007.htm?filter.iso3Language=eng&filter.employmentStatus=REGULAR&filter.employmentStatus=PART_TIME'
+    url = 'https://www.glassdoor.co.uk/Reviews/Compuco-Engineering-Reviews-EI_IE1375270.0,7_DEPT1007.htm?filter.iso3Language=eng&filter.employmentStatus=REGULAR&filter.employmentStatus=PART_TIME'
     return scrape.glassdoor_engineering_rating(url), url
 
 
@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://github.com/remoteintech/remote-jobs/blob/main/company-profiles/compucorp.md'
     tech = 'php, python, drupal, civicrm, react, ansible, packer, jenkins, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/compuco'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

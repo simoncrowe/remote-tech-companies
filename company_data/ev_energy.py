@@ -40,3 +40,10 @@ def salary():
     '''Salary range from Senior Software Engineer job spec'''
     url = 'https://evenergy.teamtailor.com/en/jobs/2112036-senior-backend-engineer-fully-remote?utm_campaign=jobs-widget&utm_source=evenergy.teamtailor.com&utm_content=jobs&utm_medium=web'
     return '£66-79k', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/ev-energy'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

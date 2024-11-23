@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer Salary'''
     url = 'https://www.levels.fyi/companies/adverity/salaries/software-engineer'
     return scrape.levels_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/adverity'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

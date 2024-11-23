@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Gravity-Sketch-Software-Engineer-Salaries-E2328807_D_KO15,32.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/gravity-2'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

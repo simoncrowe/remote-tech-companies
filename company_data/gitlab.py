@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer in USA'''
     url = 'https://www.glassdoor.co.uk/Salary/GitLab-Senior-Software-Engineer-US-Salaries-EJI_IE1296544.0,6_KO7,31_IL.32,34_IN1.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/gitlab-com'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

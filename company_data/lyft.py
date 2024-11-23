@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://stackshare.io/lyft/lyft'
     tech = 'java, swift, c++, php, go, js, python, flask, redis, mongodb, docker, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/lyft'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

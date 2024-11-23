@@ -40,3 +40,10 @@ def salary():
     '''Median IC2 Software Engineer salary'''
     url = 'https://www.levels.fyi/companies/dropbox/salaries/software-engineer/levels/ic2'
     return scrape.levels_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/dropbox'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

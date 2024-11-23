@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer based in USA'''
     url = 'https://www.glassdoor.com/Salary/Protocol-Labs-Senior-Software-Engineer-Salaries-E3245538_D_KO14,38.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/protocol-labs'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

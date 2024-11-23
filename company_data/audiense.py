@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://www.audiense.com/jobs/product-developer'
     tech = 'node.js, react, mongodb, mysql, rabbitmq, redis, docker, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/audiense'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Juro-Software-Engineer-Salaries-E3044304_D_KO5,22.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/juro'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

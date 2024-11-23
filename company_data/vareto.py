@@ -40,3 +40,10 @@ def salary():
     '''Estimate on Senior Backend engineer job spec'''
     url = 'https://www.glassdoor.com/Job/sunnyvale-ca-senior-back-end-engineer-jobs-SRCH_IL.0,12_IC1147442_KO13,37.htm?src=GD_JOB_AD&rdserp=true&srs=EI_JOBS&jl=1008349010689&ao=1136043&s=21&guid=000001852be555ba99e2f207ff6eb863&pos=101&t=ESR&vt=w&uido=D94720BC0895752F6C324BBA984BADE1&cs=1_140617d6&cb=1671478728749&jobListingId=1008349010689&jrtk=3-0-1gklualsgjm5g801-1gklualteh7gj800-57f70735a3777c31-'
     return '$117K - $167K', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/vareto'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -34,3 +34,10 @@ def tech_stack():
     url = 'https://northern.tech/careers/open-positions/frontend-developer-backend-experience'
     tech = 'go, python, mongodb'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/northern-tech'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

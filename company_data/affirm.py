@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer II based in USA'''
     url = 'https://www.levels.fyi/companies/affirm/salaries/software-engineer/levels/l5'
     return scrape.levels_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/affirm'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

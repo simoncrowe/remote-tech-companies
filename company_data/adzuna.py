@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://stackshare.io/adamtaylor/adzuna'
     tech = 'perl, js. mysql, nginx jenkins, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/adzuna'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

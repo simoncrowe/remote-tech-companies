@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Shopify-Senior-Software-Engineer-Salaries-E675933_D_KO8,32.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/shopify'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

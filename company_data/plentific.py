@@ -40,3 +40,10 @@ def salary():
     '''Salary range for the Software Engineer title, based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Plentific-Software-Engineer-Salaries-E966007_D_KO10,27.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/plentific'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://stackshare.io/facebook/facebook'
     tech = 'php, hack, js, react, graphql, cassandra, jenkins, chef'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/meta'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

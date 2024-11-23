@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Blackbaud-Senior-Software-Engineer-Salaries-E15863_D_KO10,34.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/blackbaud'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

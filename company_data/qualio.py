@@ -34,3 +34,10 @@ def tech_stack():
     url = 'https://www.qualio.com/careers/job?gh_jid=5254313003'
     tech = 'python, js, docker, aws'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/qualio'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

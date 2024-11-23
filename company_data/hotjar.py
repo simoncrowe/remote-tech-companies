@@ -40,3 +40,10 @@ def salary():
     '''Salary range mentioned on a Senior Software Engineer job spec (Remote: EMEA)'''
     url = 'https://boards.eu.greenhouse.io/hotjar/jobs/4068204101'
     return '€80,000 - €105,000', url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/hotjar'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

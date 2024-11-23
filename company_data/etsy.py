@@ -40,3 +40,10 @@ def salary():
     '''Senior Software Engineer'''
     url = 'https://www.glassdoor.com/Salary/Etsy-Senior-Software-Engineer-Salaries-E42751_D_KO5,29.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/etsy'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

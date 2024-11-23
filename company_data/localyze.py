@@ -33,3 +33,10 @@ tech_stack = 'unknown'
 
 
 salary = 'unknown'
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/localyze'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

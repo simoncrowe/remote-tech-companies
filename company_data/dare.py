@@ -34,3 +34,10 @@ def tech_stack():
     url = 'https://careers.dare.global/jobs/1484999-senior-software-engineer'
     tech = 'python, go'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/dare'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

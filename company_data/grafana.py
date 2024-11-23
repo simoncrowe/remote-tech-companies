@@ -37,6 +37,13 @@ def tech_stack():
 
 
 def salary():
-    '''Senior Software Engineer'''
-    url = 'https://www.levels.fyi/companies/grafana/salaries/software-engineer'
+    '''Senior Software Engineer in USA'''
+    url = 'https://www.levels.fyi/companies/grafana/salaries/software-engineer?country=254'
     return scrape.levels_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/raintank'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

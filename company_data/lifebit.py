@@ -40,3 +40,10 @@ def salary():
     '''Software Engineer based in UK'''
     url = 'https://www.glassdoor.co.uk/Salary/Lifebit-Software-Engineer-Salaries-E3969764_D_KO8,25.htm'
     return scrape.glassdoor_salary(url), url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/lifebit'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url
