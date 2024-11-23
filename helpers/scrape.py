@@ -1,19 +1,14 @@
-import random
 import re
-import time
-
-import requests
 
 from helpers import add
 
 
-@add.random_user_agent
-def glassdoor_rating(company_profile_url, user_agent):
-    headers = {'User-Agent': user_agent}
+@add.chromedriver
+def glassdoor_rating(company_profile_url, driver):
+    driver.get(company_profile_url)
     print(f'Scraping rating from {company_profile_url}')
-    response = requests.get(company_profile_url, headers=headers)
-    body = response.content.decode()
-    if result := re.search(r'title="([0-5]\.[0-9]+)"', body):
+    body = driver.page_source
+    if result := re.search(r'<p class="rating-headline-average_rating__\w+">([0-5]\.[0-9])</p>', body):
         ave_rating = result.group(1)
         print(f'Found rating: {ave_rating}')
         return ave_rating
@@ -24,16 +19,17 @@ def glassdoor_rating(company_profile_url, user_agent):
     return 'unknown'
 
 
-@add.random_user_agent
-def glassdoor_engineering_rating(company_profile_url, user_agent):
-    headers = {'User-Agent': user_agent}
-    print(f'Scraping rating from {company_profile_url}')
-    response = requests.get(company_profile_url, headers=headers)
-    body = response.content.decode()
+@add.chromedriver
+def glassdoor_engineering_rating(company_profile_url, driver):
+    driver.get(company_profile_url)
+    body = driver.page_source
+
+    print(f'Scraping engineering rating from {company_profile_url}')
+    body = driver.page_source
     if re.search(r'<p.*>There are no reviews matching your search', body):
         return 'unknown'
 
-    result = re.search(r'title="([0-5]\.[0-9])"', body)
+    result = re.search(r'<p class="rating-headline-average_rating__\w+">([0-5]\.[0-9])</p>', body)
     try:
         ave_rating = result.group(1)
     except AttributeError:
@@ -42,63 +38,67 @@ def glassdoor_engineering_rating(company_profile_url, user_agent):
     return ave_rating
 
 
-@add.random_user_agent
-def glassdoor_salary(salary_info_url, user_agent):
-    headers = {'User-Agent': user_agent}
+@add.chromedriver
+def glassdoor_salary(salary_info_url, driver):
+    driver.get(salary_info_url)
     print(f'Scraping salary from {salary_info_url}')
-    response = requests.get(salary_info_url, headers=headers)
-    body = response.content.decode()
-    print(body)
-    result = re.search(r'[£\$€][0-9,]+\s*-\s*[£\$€][0-9\,]+', body)
+    body = driver.page_source
+
+    salary = None
+    result = re.search(r'is (\w*[£$€][0-9,K]+\s*[–-]\s*\w*[£$€][0-9,K]+) per year', body)
     if result:
         salary = result.group(0)
-    else:
         # Try for single salary record
+    else:
         result = re.search(
             r'total pay for a .* at .* is ([£\$€][0-9,]+) per year. This number',
             body
         )
-        salary = result.group(1)
+        if result:
+            salary = result.group(1)
 
-    print(f'Found salary: {salary}')
-    salary_range = [amount.strip() for amount in salary.split("-")]
-    return " - ".join(salary_range)
+    if salary:
+        print(f'Found salary: {salary}')
+        salary_range = [amount.strip() for amount in salary.split("-")]
+        return " - ".join(salary_range)
+    else:
+        result = re.search(r"unable to confidently predict", body)
+        if result:
+            print("No salary estimate listed")
+            return "unknown"
+        else:
+            raise RuntimeError("Unable to match against page")
 
 
-@add.random_user_agent
-def levels_salary(salary_info_url, user_agent):
-    headers = {'User-Agent': user_agent}
+@add.chromedriver
+def levels_salary(salary_info_url, driver):
     print(f'Scraping salary from {salary_info_url}')
-    response = requests.get(salary_info_url, headers=headers)
-    body = response.content.decode()
-    result = re.search(r'The median Software Engineer compensation package at \w+ totals (\$[0-9]+K) per year', body)
+    driver.get(salary_info_url)
+    body = driver.page_source
+    result = re.search(r'The median Software Engineer compensation package at \w+ totals ([£$€][0-9.]+K) per year', body)
     if not result:
-        result = re.search(r'The median total compensation package for a[\w\s]+ at [\w\s]+ is\s+([$£][0-9]+,[0-9]+).', body)
+        result = re.search(r'The median total compensation package for a[\w\s]+ at [\w\s]+ is\s+([$£€][0-9]+,[0-9]+).', body)
+    if not result:
+        result = re.search(r'The median Software Engineer compensation in [\w\s]+ package at \w+ totals ([$£€][0-9.]+K) per year', body)
+
     try:
         salary = result.group(1)
         print(f'Found salary: {salary}')
         return salary
     except AttributeError:
-        if re.search(r'We only need.*[0-9]+.*submission.*to unlock salary data',  body):
+        if re.search(r'We only need.*[0-9]+.*submission.*to unlock',  body):
             print('Not enough data to get salary right now')
             return 'unknown'
         else:
             raise
 
 
-@add.random_user_agent
-def crunchbase_funding(company_profile_url, user_agent):
-    headers = {'User-Agent': user_agent}
-    sleep_duration = 30 + (random.random() * 30)
-    print(f"Waiting {sleep_duration:.2f} seconds")
-    time.sleep(sleep_duration)
+@add.chromedriver
+def crunchbase_funding(company_profile_url, driver):
 
     print(f'Scraping funding info from {company_profile_url}')
-    response = requests.get(company_profile_url, headers=headers)
-    if response.status_code == 404:
-        return "bad URL"
-
-    body = response.content.decode()
+    driver.get(company_profile_url)
+    body = driver.page_source
 
     amount_result = re.search(r'text\":\".+ has raised (\$[0-9A-Z.]+)\.\"', body)
     amount = amount_result.group(1) if amount_result is not None else None

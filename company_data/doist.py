@@ -6,7 +6,7 @@ business = 'Productivity'
 
 
 def remote_policy():
-    '''Their careers page, which says "Doisters can work from anywhere in the world"'''
+    '''Their careers page, which says Doisters can work from anywhere in the world'''
     url = 'https://doist.com/careers'
     return RemotePolicy.REMOTE_FIRST, url
 

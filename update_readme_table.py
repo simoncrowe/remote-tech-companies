@@ -71,7 +71,7 @@ def get_data(module, name):
         with open(cache_path, 'r') as fileobj:
             return fileobj.read()
 
-    print(f'{data_key} not found in cache. Retrieving...')
+    print(f'Up-to-date value for {data_key} not in cache. Retrieving...')
     if data_source := getattr(module, name, None):
         markdown = render_markdown(data_source)
         with open(cache_path, 'w') as fileobj:

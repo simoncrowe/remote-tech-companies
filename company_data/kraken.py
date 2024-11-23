@@ -38,7 +38,7 @@ def tech_stack():
 
 def salary():
     '''Median Software Engineer salary'''
-    url = 'https://www.levels.fyi/companies/kraken/salaries/software-engineer'
+    url = 'https://www.levels.fyi/companies/kraken/salaries/software-engineer/levels/l3'
     return scrape.levels_salary(url), url
 
 
