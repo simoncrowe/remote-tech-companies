@@ -1,11 +1,13 @@
 import re
 
 from helpers import add
+from helpers.add import wait_for_cloudflare
 
 
 @add.browser
 def glassdoor_rating(company_profile_url, driver):
     driver.get(company_profile_url)
+    wait_for_cloudflare(driver)
     print(f'Scraping rating from {company_profile_url}')
     body = driver.page_source
     if result := re.search(r'<p class="rating-headline-average_rating__\w+">([0-5]\.[0-9])</p>', body):
@@ -22,7 +24,7 @@ def glassdoor_rating(company_profile_url, driver):
 @add.browser
 def glassdoor_engineering_rating(company_profile_url, driver):
     driver.get(company_profile_url)
-    body = driver.page_source
+    wait_for_cloudflare(driver)
 
     print(f'Scraping engineering rating from {company_profile_url}')
     body = driver.page_source
@@ -41,6 +43,7 @@ def glassdoor_engineering_rating(company_profile_url, driver):
 @add.browser
 def glassdoor_salary(salary_info_url, driver):
     driver.get(salary_info_url)
+    wait_for_cloudflare(driver)
     print(f'Scraping salary from {salary_info_url}')
     body = driver.page_source
 
