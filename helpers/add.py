@@ -79,7 +79,6 @@ def wait_for_cloudflare(driver):
             "challenge-running",
             "cf-browser-verification",
             "checking your browser",
-            "cf_chl_opt",
         )
         if any(marker in title or marker in source for marker in cloudflare_markers):
             input("Cloudflare check detected. Please solve it in the browser, then press Enter...")
@@ -93,6 +92,7 @@ def browser(func):
     def wrapper(*args, **kwargs):
         try:
             result = func(*args, driver=browser._driver, **kwargs)
+            print(f"[{func.__name__}] returned: {result!r}")
             sleep_duration = 30 + (random.random() * 30)
             print(f"Waiting {sleep_duration: .2f} seconds")
             time.sleep(sleep_duration)
