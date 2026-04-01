@@ -3,7 +3,7 @@ import re
 from helpers import add
 
 
-@add.chromedriver
+@add.browser
 def glassdoor_rating(company_profile_url, driver):
     driver.get(company_profile_url)
     print(f'Scraping rating from {company_profile_url}')
@@ -19,7 +19,7 @@ def glassdoor_rating(company_profile_url, driver):
     return 'unknown'
 
 
-@add.chromedriver
+@add.browser
 def glassdoor_engineering_rating(company_profile_url, driver):
     driver.get(company_profile_url)
     body = driver.page_source
@@ -38,7 +38,7 @@ def glassdoor_engineering_rating(company_profile_url, driver):
     return ave_rating
 
 
-@add.chromedriver
+@add.browser
 def glassdoor_salary(salary_info_url, driver):
     driver.get(salary_info_url)
     print(f'Scraping salary from {salary_info_url}')
@@ -70,7 +70,7 @@ def glassdoor_salary(salary_info_url, driver):
             raise RuntimeError("Unable to match against page")
 
 
-@add.chromedriver
+@add.browser
 def levels_salary(salary_info_url, driver):
     print(f'Scraping salary from {salary_info_url}')
     driver.get(salary_info_url)
@@ -93,7 +93,7 @@ def levels_salary(salary_info_url, driver):
             raise
 
 
-@add.chromedriver
+@add.browser
 def crunchbase_funding(company_profile_url, driver):
 
     print(f'Scraping funding info from {company_profile_url}')
