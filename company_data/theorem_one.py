@@ -19,13 +19,13 @@ def hiring_region():
 
 def overall_glassdoor_rating():
     '''Overall average glassdoor rating'''
-    url = 'https://www.glassdoor.co.uk/Overview/Working-at-TheoremOne-EI_IE960344.11,21.htm'
+    url = 'https://www.glassdoor.co.uk/Overview/Working-at-TheoremOne-EI_IE10005977.11,21.htm'
     return scrape.glassdoor_rating(url), url
 
 
 def engineering_glassdoor_rating():
     '''Average glassdoor rating for engineers'''
-    url = 'https://www.glassdoor.co.uk/Reviews/TheoremOne-Engineering-Reviews-EI_IE960344.0,10_DEPT1007.htm?filter.iso3Language=eng&filter.employmentStatus=REGULAR&filter.employmentStatus=PART_TIME'
+    url = 'https://www.glassdoor.co.uk/Reviews/TheoremOne-Reviews-E10005977.htm?filter.jobFunction=1007'
     return scrape.glassdoor_engineering_rating(url), url
 
 
