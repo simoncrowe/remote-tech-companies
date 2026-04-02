@@ -10,7 +10,7 @@ from pytablewriter import MarkdownTableWriter
 import company_data
 
 CACHE_DIRPATH = './.cache'
-CACHE_LIFETIME = timedelta(days=360).total_seconds()
+CACHE_LIFETIME = timedelta(days=90).total_seconds()
 README_FILENAME = 'README.md'
 TABLE_START = '<!--- START TABLE --->'
 TABLE_END = '<!--- END TABLE --->'
@@ -42,8 +42,8 @@ def sort_key(data):
         overall_rating = 0
 
     possible_regions = ['uk', 'england', 'europe', 'emea', 'global', 'gmt']
-    core_tech = ['python']
-    desired_tech = ['fastapi', 'flask', 'go', 'rust']
+    core_tech = ['python', 'aws', 'kubernetes']
+    desired_tech = ['fastapi', 'flask', 'go', 'rust', 'kafka']
     undesired_tech = []
     return (
         any(region in data['hiring_region'].lower()
