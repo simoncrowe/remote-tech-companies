@@ -40,7 +40,8 @@ _SC_BOOKMARKED = {
     'hotjar'
     'form3',
     'canonical',
-    'synthesia'
+    'synthesia',
+    'zapier',
 }
 
 
