@@ -13,8 +13,8 @@ def remote_policy():
 
 def hiring_region():
     '''Listings for global remote jobs'''
-    url = 'global'
-    return 'https://jobs.elastic.co/jobs/department/engineering?size=n_20_n', url
+    url = 'https://jobs.elastic.co/jobs/department/engineering?size=n_20_n'
+    return 'global', url
 
 
 def overall_glassdoor_rating():
