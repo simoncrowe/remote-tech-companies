@@ -24,6 +24,23 @@ COLUMNS = {
     'tech_stack': 'Tech',
     'salary': 'Eng. Pay',
     'funding': 'Funding',
+    'bookmarked': 'Bookmarked',
+}
+_SC_BOOKMARKED = {
+    'datadog',
+    'grafana',
+    'elastic',
+    'close',
+    'rasa',
+    'zoe',
+    'snowplow',
+    'gitlab',
+    'confluent',
+    'prima',
+    'hotjar'
+    'form3',
+    'canonical',
+    'synthesia'
 }
 
 
@@ -46,6 +63,7 @@ def sort_key(data):
     desired_tech = ['fastapi', 'flask', 'go', 'rust', 'kafka']
     undesired_tech = []
     return (
+        data['bookmarked'] == 'yes',
         any(region in data['hiring_region'].lower()
             for region in possible_regions),
         any(tech in data['tech_stack'] for tech in core_tech),
@@ -94,6 +112,11 @@ def get_data(module, name):
 def iter_values(module):
     for name in COLUMNS.keys():
         yield name, get_data(module, name)
+    print(module.__name__)
+    if module.__name__.split(".")[-1] in _SC_BOOKMARKED:
+        yield "bookmarked", "yes"
+    else:
+        yield "bookmarked", "no"
 
 
 def iter_data():
