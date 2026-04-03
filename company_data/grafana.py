@@ -30,9 +30,9 @@ def overall_glassdoor_rating():
 
 
 def tech_stack():
-    '''Main languages from their open source repos'''
-    url = 'https://github.com/orgs/grafana/repositories'
-    tech = 'go, typescript'
+    '''Selected tech from himalayas.app'''
+    url = 'https://himalayas.app/companies/grafana-labs/tech-stack'
+    tech = 'go, js, react, nginx, k8s, terraform, aws'
     return tech, url
 
 
