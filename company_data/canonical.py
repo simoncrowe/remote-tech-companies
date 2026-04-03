@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://himalayas.app/companies/canonical/tech-stack'
     tech = 'js, python, java, postgres, okta, linux'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/canonical-ltd'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url

@@ -1,14 +1,14 @@
 from company_data import RemotePolicy
 from helpers import scrape
 
-name = ''
-business = ''
+name = 'PostHog'
+business = 'Product Analytics'
 
 
 def remote_policy():
     '''Their HR benefits page, which says they are fully remote'''
     url = 'https://posthog.com/handbook/people/benefits'
-    return RemotePolicy.REMOTE_FRIENDLY, url
+    return RemotePolicy.REMOTE_FIRST, url
 
 
 def hiring_region():
@@ -40,3 +40,10 @@ def tech_stack():
     url = 'https://posthog.com/handbook/engineering/stack'
     tech = 'python, js, rust, postgres, react, django, celery, dagster, redis, kafka, clickhouse, aws, k8s'
     return tech, url
+
+
+def funding():
+    '''Funding information scraped from Crunchbase'''
+    url = 'https://www.crunchbase.com/organization/posthog'
+    funding_info = scrape.crunchbase_funding(url)
+    return funding_info, url
