@@ -42,6 +42,7 @@ _SC_BOOKMARKED = {
     'canonical',
     'synthesia',
     'zapier',
+    'phaidra',
 }
 
 
