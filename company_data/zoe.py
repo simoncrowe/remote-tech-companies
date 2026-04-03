@@ -13,7 +13,7 @@ def remote_policy():
 
 def hiring_region():
     '''Listings for regional remote jobs'''
-    url = 'https://jobs.lever.co/joinzoe'
+    url = 'https://jobs.ashbyhq.com/zoe'
     return 'USA, Europe', url
 
 
