@@ -37,9 +37,9 @@ def tech_stack():
 
 
 def salary():
-    '''Senior Software Engineer salary range based on job spec'''
-    url = 'https://boards.eu.greenhouse.io/synthesia/jobs/4094596101?gh_jid=4094596101'
-    return '€70-110k', url
+    '''Senior Software Engineer salary (UK)'''
+    url = 'https://www.glassdoor.co.uk/Salary/Synthesia-Senior-Software-Engineer-Salaries-E4421112_D_KO10,34.htm'
+    return scrape.glassdoor_salary(url), url
 
 
 def funding():
