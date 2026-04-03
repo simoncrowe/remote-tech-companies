@@ -1,10 +1,10 @@
 import re
 
-from helpers import add
-from helpers.add import wait_for_cloudflare
+from helpers import inject
+from helpers.cloudflare import wait_for_cloudflare
 
 
-@add.browser
+@inject.webdriver
 def glassdoor_rating(company_profile_url, driver):
     driver.get(company_profile_url)
     wait_for_cloudflare(driver)
@@ -19,7 +19,7 @@ def glassdoor_rating(company_profile_url, driver):
     return 'unknown'
 
 
-@add.browser
+@inject.webdriver
 def glassdoor_engineering_rating(company_profile_url, driver):
     driver.get(company_profile_url)
     wait_for_cloudflare(driver)
@@ -38,7 +38,7 @@ def glassdoor_engineering_rating(company_profile_url, driver):
     return 'unknown'
 
 
-@add.browser
+@inject.webdriver
 def glassdoor_salary(salary_info_url, driver):
     driver.get(salary_info_url)
     wait_for_cloudflare(driver)
@@ -81,7 +81,7 @@ def glassdoor_salary(salary_info_url, driver):
     raise RuntimeError("Unable to match against page")
 
 
-@add.browser
+@inject.webdriver
 def levels_salary(salary_info_url, driver):
     print(f'Scraping salary from {salary_info_url}')
     driver.get(salary_info_url)
@@ -112,7 +112,7 @@ def levels_salary(salary_info_url, driver):
     raise RuntimeError("Unable to match against levels.fyi page")
 
 
-@add.browser
+@inject.webdriver
 def crunchbase_funding(company_profile_url, driver):
 
     print(f'Scraping funding info from {company_profile_url}')

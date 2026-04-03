@@ -23,42 +23,11 @@ def _find_chrome_profile():
     return next((str(p) for p in candidates if p.exists()), None)
 
 
-def wait_for_cloudflare(driver):
-    """Detect Cloudflare challenge pages and prompt the user to solve them."""
-    time.sleep(3)
-    while True:
-        title = driver.title.lower()
-        source = driver.page_source.lower()
-        # Only check the title for challenge indicators.
-        # Checking source for markers like "challenge-platform" causes false
-        # positives because normal pages include Cloudflare scripts with that
-        # string in their URL.
-        title_markers = (
-            "just a moment",
-            "checking your browser",
-        )
-        # These only indicate a challenge when the page body is mostly a
-        # Cloudflare challenge form, not when they appear in inline scripts
-        # on a normal page. Detect them via a dedicated challenge element.
-        source_markers = (
-            "cf-challenge-running",
-            "cf-browser-verification",
-            'id="cf-turnstile"',
-        )
-        if any(marker in title for marker in title_markers) or any(
-            marker in source for marker in source_markers
-        ):
-            input("Cloudflare check detected. Please solve it in the browser, then press Enter...")
-            time.sleep(2)
-        else:
-            break
-
-
-def browser(func):
+def webdriver(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         try:
-            result = func(*args, driver=browser._driver, **kwargs)
+            result = func(*args, driver=webdriver._driver, **kwargs)
             print(f"[{func.__name__}] returned: {result!r}")
             sleep_duration = 30 + (random.random() * 30)
             print(f"Waiting {sleep_duration: .2f} seconds")
@@ -67,7 +36,7 @@ def browser(func):
             print(str(e))
             print("Sleeping for an hour to allow debug...")
             time.sleep(60*60)
-            browser._driver.quit()
+            webdriver._driver.quit()
             raise
 
         return result
@@ -99,7 +68,7 @@ try:
     print(f"Detected Chrome version: {_chrome_version}")
 except Exception:
     pass
-browser._driver = uc.Chrome(options=_options, version_main=_chrome_version)
+webdriver._driver = uc.Chrome(options=_options, version_main=_chrome_version)
 
 if _temp_profile:
     atexit.register(shutil.rmtree, _temp_profile, ignore_errors=True)
