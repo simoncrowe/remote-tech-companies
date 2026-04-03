@@ -14,7 +14,7 @@ __all__ = MODULE_NAMES
 
 
 @enum.unique
-class RemotePolicy(str, enum.Enum):
+class RemotePolicy(enum.StrEnum):
     REMOTE_FIRST = "remote-first"
     REMOTE_FRIENDLY = "remote-friendly"
 

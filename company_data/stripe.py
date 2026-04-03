@@ -32,7 +32,7 @@ def engineering_glassdoor_rating():
 def tech_stack():
     '''A selection of tech from techstasks.io'''
     url = 'https://techstacks.io/stacks/stripe/'
-    tech = 'rub, js, postgres, redis, aws'
+    tech = 'ruby, js, postgres, redis, aws'
     return tech, url
 
 
