@@ -42,7 +42,7 @@ def sort_key(data):
         overall_rating = 0
 
     possible_regions = ['uk', 'england', 'europe', 'emea', 'global', 'gmt']
-    core_tech = ['python', 'aws', 'kubernetes']
+    core_tech = ['python', 'aws', 'kubernetes', 'k8s']
     desired_tech = ['fastapi', 'flask', 'go', 'rust', 'kafka']
     undesired_tech = []
     return (
@@ -50,8 +50,6 @@ def sort_key(data):
             for region in possible_regions),
         any(tech in data['tech_stack'] for tech in core_tech),
         not any(tech in data['tech_stack'] for tech in undesired_tech),
-        eng_rating >= 4.28 if eng_rating else True,  # Current employer
-        overall_rating >= 3.78 if overall_rating else True,  # Current employer
         '[remote-first]' in data['remote_policy'],
         any(tech in data['tech_stack'] for tech in desired_tech),
         eng_rating or overall_rating,
