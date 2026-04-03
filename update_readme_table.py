@@ -32,8 +32,6 @@ _SC_BOOKMARKED = {
     'elastic',
     'close',
     'rasa',
-    'zoe',
-    'snowplow',
     'gitlab',
     'confluent',
     'prima',
