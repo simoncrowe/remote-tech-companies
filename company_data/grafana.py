@@ -37,9 +37,9 @@ def tech_stack():
 
 
 def salary():
-    '''Senior Software Engineer in USA'''
-    url = 'https://www.levels.fyi/companies/grafana/salaries/software-engineer?country=254'
-    return scrape.levels_salary(url), url
+    '''Senior Software Engineer in UK'''
+    url = 'https://www.glassdoor.co.uk/Salary/Grafana-Labs-Senior-Software-Engineer-Salaries-E2300269_D_KO13,37.htm'
+    return scrape.glassdoor_salary(url), url
 
 
 def funding():
